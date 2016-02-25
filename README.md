@@ -1,4 +1,4 @@
-# SamlDemoFrontEnd
+# SamlIdentityProvider
 Call to a Saml Project
 
 In order to run it nicely you need to start the following projects
@@ -10,8 +10,8 @@ It will work with out them but the Auditing (DataStream) will throw errors and t
 
 to start service navigate to cloned project
 
-sbt run
+sbt "run 9100"
 
 
 url is
-http://localhost:9000/saml
+http://localhost:9100/saml-provider

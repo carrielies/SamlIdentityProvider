@@ -3,8 +3,8 @@ import sbt._
 object FrontendBuild extends Build with MicroService {
   import scala.util.Properties.envOrElse
 
-  val appName = "saml-frontend"
-  val appVersion = envOrElse("SAML_FRONTEND_VERSION", "999-SNAPSHOT")
+  val appName = "saml-provider"
+  val appVersion = envOrElse("SAML_PROVIDER_VERSION", "999-SNAPSHOT")
 
   override lazy val appDependencies: Seq[ModuleID] = AppDependencies()
 }

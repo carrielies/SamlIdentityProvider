@@ -36,8 +36,8 @@ class HomeControllerSpec extends PlaySpec with OneServerPerSuite with MockitoSug
           welcomeWithUnAuthorisedUser { result =>
             status(result) must equal(OK)
             val document = Jsoup.parse(contentAsString(result))
-            document.title() must be("Saml Title")
-            document.getElementById("welcome-header").text() must be("Saml Header")
+            document.title() must be("Saml Provider Title")
+            document.getElementById("welcome-header").text() must be("Saml Provider Header")
             document.getElementById("welcome-text").text() must include("text")
            }
         }
@@ -48,7 +48,7 @@ class HomeControllerSpec extends PlaySpec with OneServerPerSuite with MockitoSug
           welcomeWithUnAuthenticated { result =>
             status(result) must equal(OK)
             val document = Jsoup.parse(contentAsString(result))
-            document.title() must be("Saml Title")
+            document.title() must be("Saml Provider Title")
 
           }
         }
@@ -59,7 +59,7 @@ class HomeControllerSpec extends PlaySpec with OneServerPerSuite with MockitoSug
           welcomeWithAuthorisedUser { result =>
             status(result) must equal(OK)
             val document = Jsoup.parse(contentAsString(result))
-            document.title() must be("Saml Title")
+            document.title() must be("Saml Provider Title")
           }
         }
       }
